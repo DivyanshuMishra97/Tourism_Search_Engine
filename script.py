@@ -14,6 +14,31 @@ def get_traveler_location(traveler):
 test_destination_index=get_traveler_location(test_traveler)
 print(test_destination_index)
 
+attractions=[[], [], [], [], []]
+print(attractions)
+
+
+#error-------------------------------------------------------------------------
+
+
+def add_attraction(destination,attraction):
+  try:
+    destination_index=get_destination_index(destination)
+    attractions_for_destination=attractions[destination_index]
+    attractions_for_destination.append(attraction)
+    return attraction_for_destination
+  except ValueError:
+    print("Error Caught")
+    return
+  
+  add_attraction(['Venice Beach', ['beach']])
+  print(attractions)
+
+
+
+
+
+
 
 
 
