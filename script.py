@@ -33,12 +33,30 @@ add_attraction("Paris, France", ["the Louvre", ["art", "museum"]])
 add_attraction("Paris, France", ["Arc de Triomphe", ["historical site", "monument"]])
 add_attraction("Shanghai, China", ["Yu Garden", ["garden", "historcical site"]])
 add_attraction("Shanghai, China", ["Yuz Museum", ["art", "museum"]])
-add_attraction("Shanghai, China", ["Oriental Pearl Tower", ["skyscraper", "viewing deck"]])
+add_attraction("Shanghai, China", ["Oriental Pearl Tower", ["skyscraper", "viewing deck"]])++++++--++++DD
 add_attraction("Los Angeles, USA", ["LACMA", ["art", "museum"]])
 add_attraction("São Paulo, Brazil", ["São Paulo Zoo", ["zoo"]])
 add_attraction("São Paulo, Brazil", ["Pátio do Colégio", ["historical site"]])
 add_attraction("Cairo, Egypt", ["Pyramids of Giza", ["monument", "historical site"]])
 add_attraction("Cairo, Egypt", ["Egyptian Museum", ["museum"]])
+
+def find_attractions(destination, interests):
+  
+  destination_index=get_destination_index(destination)
+  attractions_in_city=attractions[destination_index]
+    
+  attraction_tags=attractions_in_city[1]
+  for i in attraction_tags:
+    temp=i
+    for interest in interests:
+      if interest==temp:
+        attractions_with_interest.append(attractions_in_city[0])   
+            
+  return attractions_with_interest       
+        
+  
+la_arts=find_attractions("Los Angeles, USA",['art'])
+print(la_arts)
 
 
 
